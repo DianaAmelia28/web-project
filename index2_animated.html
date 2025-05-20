@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diana Amelia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: 1fr !important;
+        }
+        .text-5xl {
+          font-size: 2.5rem !important;
+        }
+        .text-4xl {
+          font-size: 2rem !important;
+        }
+        .px-8 {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+        .py-20 {
+          padding-top: 3rem !important;
+          padding-bottom: 3rem !important;
+        }
+        .gap-12 {
+          gap: 1.5rem !important;
+        }
+        .space-y-12 > * + * {
+          margin-top: 1.5rem !important;
+        }
+      }
+      .animate-typing::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #f8a56e;
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .project-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+      .project-card:hover::before {
+        opacity: 1;
+      }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeInUp 0.6s ease-out;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#57B5E7",
+              secondary: "#8DD3C7",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-cream">
+    <nav
+      class="fixed w-full bg-cream/80 backdrop-blur-md z-50 border-b border-gray-100"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+          <a href="#" class="text-2xl font-['font-style: italic;'] text-primary">Diana Amelia</a>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#about"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >About me</a
+            >
+            <a
+              href="#hobby"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >Hobby</a
+            >
+            <a
+              href="#project"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >My Project</a
+            >
+            <a
+              href="#contact"
+              class="nav-link relative text-gray-700 hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </div>
+          <button class="md:hidden w-10 h-10 flex items-center justify-center">
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <header
+      class="pt-24 md:pt-32 pb-16 md:pb-20 px-4 relative overflow-hidden bg-gradient-to-br from-cream via-blue-50/30 to-primary/5"
+    >
+      <div class="project-card fade-in-up">
+        <!-- About me (animasi scroll) -->
+      </div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <h2 class="text-xl text-primary font-semibold mb-2">
+              My Profile
+            </h2>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-typing">
+              Hai, saya Diana Amelia
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+              Diana Amelia adalah koki terkenal yang diakui atas kreativitas dan
+              semangatnya di dapur. Dengan dasar kuat dalam masakan tradisional
+              dan sentuhan inovasi, ia telah membangun karier gemilang dengan
+              kreasi hidangan yang memadukan cita rasa global dan teknik modern.
+              Keunggulan kulinernya telah membuatnya mendapat pengikut setia dan
+              pengakuan di dunia kuliner internasional.
+            </p>
+          </div>
+          <div class="relative">
+            <div class="relative w-full h-[300px] md:h-[500px] mt-8 md:mt-0">
+              <img
+                src="WhatsApp Image 2025-05-11 at 18.41.35_d60c8a98.jpg"
+                alt="Hero Image 1"
+                class="absolute top-0 right-0 w-[80%] h-[80%] rounded-2xl shadow-2xl object-cover z-20"
+              />
+              <div
+                class="absolute -right-8 -top-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl"
+              ></div>
+              <div
+                class="absolute -left-8 -bottom-8 w-48 h-48 bg-secondary/10 rounded-full blur-3xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Section About -->
+    <section id="about" class="py-20 px-4 bg-gradient-to-br from-brown via-blue-50/30 to-primary/5">
+      <!-- Konten tentang profile (di-simpan) -->
+    </section>
+    <!-- Section Hobby -->
+    <section id="hobby" class="hobby">
+      <!-- Konten hobi (di-simpan) -->
+    </section>
+    <!-- Section My Project -->
+    <section id="project" class="project">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16">My Project</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="Screenshot 2025-05-08 160609 - Copy.png"
+              alt="Project 1"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Okonomiyaki
+              </h3>
+              <p class="text-white/80 mb-4">Pancake gurih yang terbuat dari adonan tepung, kol, telur, dan berbagai isian seperti daging, seafood, atau keju.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <a href="https://dianaamelia28.github.io/web-project-1/"></a>
+
+            <div 
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Project Sejarah
+              </h3>
+              <p class="text-white/80 mb-4">Ramen dengan kuah kental yang terbuat dari rebusan tulang babi (irisan daging babi), telur rebus, dan daun bawang.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="Screenshot 2025-05-08 133919 - Copy.png"
+              alt="Project 3"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Takoyaki
+              </h3>
+              <p class="text-white/80 mb-4">Bola-bola kecil dari adonan tepung yang diisi dengan potongan gurita (tako), daun bawang, dan tenkatsu.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="Screenshot 2025-05-08 161216 - Copy.png"
+              alt="Project 4"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Gyoza
+              </h3>
+              <p class="text-white/80 mb-4">Pangsit berisi daging cincang (biasanya babi) dan sayuran seperti kol dan daun bawang.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="Screenshot 2025-05-08 161242.png"
+              alt="Project 5"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Shasimi Salmon
+              </h3>
+              <p class="text-white/80 mb-4">Irisan tipis daging salmon mentah yang segar, disajikan tanpa nasi (berbeda dari sushi).</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="Screenshot 2025-05-08 161330.png"
+              alt="Project 6"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">
+                Chiken Katsu
+              </h3>
+              <p class="text-white/80 mb-4">Dada ayam tanpa tulang yang dilapisi tepung roti (panko) lalu digoreng hingga renyah.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Tambahan 6 project-card baru sesuai instruksi -->
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/03/22/23/02/borobudur-2166750_1280.jpg"
+              alt="Project 7"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">Candi Borobudur</h3>
+              <p class="text-white/80 mb-4">Candi Borobudur yang megah, peninggalan Kerajaan Mataram Kuno abad ke-9.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="https://cdn.pixabay.com/photo/2023/04/15/13/34/cherry-blossoms-7927688_1280.jpg"
+              alt="Project 8"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">Bunga Sakura</h3>
+              <p class="text-white/80 mb-4">Bunga sakura yang indah, identik dengan keindahan musim semi di Jepang.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="https://cdn.pixabay.com/photo/2016/08/01/20/13/girl-1561989_640.jpg"
+              alt="Project 9"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">Kayak di Danau</h3>
+              <p class="text-white/80 mb-4">Seorang wisatawan wanita menikmati petualangan berkayak di danau yang tenang, dikelilingi panorama pegunungan.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="https://cdn.pixabay.com/photo/2017/12/26/09/15/happy-holidays-3040029_640.jpg"
+              alt="Project 10"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">Belanja Ceria</h3>
+              <p class="text-white/80 mb-4">Wanita ini membawa beberapa kantong belanja berwarna-warni, menunjukkan momen ceria saat berbelanja.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/10/30/17/48/hospital-5699287_640.jpg"
+              alt="Project 11"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">Rumah Sakit</h3>
+              <p class="text-white/80 mb-4">Gedung rumah sakit modern yang melayani berbagai keperluan kesehatan masyarakat.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg_white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="project-card relative group overflow-hidden rounded-2xl">
+            <img
+              src="https://cdn.pixabay.com/photo/2020/12/10/12/43/restaurant-5820196_1280.jpg"
+              alt="Project 12"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end"
+            >
+              <h3 class="text-white text-xl font-semibold mb-2">Restoran Jepang</h3>
+              <p class="text-white/80 mb-4">Interior restoran Jepang dengan lampion merah khas dan menu seperti sushi serta yakitori terpajang.</p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-github-line text-white"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors"
+                >
+                  <i class="ri-eye-line text-white"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+      <!-- Konten kontak (tidak diubah) -->
+    </section>
+  </body>
+</html>
